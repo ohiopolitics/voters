@@ -54,3 +54,18 @@ f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation)) +
 
 f %>% plotly::ggplotly()
 ```
+
+If you want to see the full official registration, use the county breakdown below.
+
+```{r,message=FALSE}
+library(DT)
+codes <- read_csv('../../County Codes.csv')
+county  <- vote %>% 
+  group_by(party_affiliation,county_number) %>%
+  summarise(count=n()) %>%
+  mutate(county = codes$County[county_number]) %>%
+  select(county,party_affiliation,count) %>%
+  pivot_wider(names_from=party_affiliation,values_from=count)
+colnames(county) <- c('County','Democrats','Republicans','Unaffiliated')
+datatable(county)
+```
