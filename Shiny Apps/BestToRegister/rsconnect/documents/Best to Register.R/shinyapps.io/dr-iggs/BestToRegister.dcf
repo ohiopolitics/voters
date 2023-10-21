@@ -1,0 +1,12 @@
+name: BestToRegister
+title: BestToRegister
+username: dr-iggs
+account: dr-iggs
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10265747
+bundleId: 7832927
+url: https://dr-iggs.shinyapps.io/BestToRegister/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

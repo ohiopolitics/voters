@@ -10,7 +10,7 @@
 library(shiny)
 library(arrow)
 library(tidyverse)
-results <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/Example%20Model%20Outputs.csv')
+results <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/Shiny%20Apps/Example%20Model%20Outputs.csv')
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
