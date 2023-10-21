@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "**Ohio Voters**",
     "section": "",
-    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Canvassers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Registrars\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Treasurers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Grassroots campaigns, donation drives, and voter canvassing always start with a voter list. Obtaining these lists is often difficult, and large corporations often monopolize the voter records and sell them to other organizations. We’ve organized the Ohio voting history for 8 million voters across 20 years and combined geographical information with census data, to help political groups find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Canvassers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaps of Voters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Registrars\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Treasurers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/power_triangle/power_triangle.html",
@@ -172,6 +172,20 @@
     "href": "posts/registrars/registrar.html",
     "title": "For Registrars",
     "section": "",
-    "text": "See people who we think are likely to register to vote this election, then help them register!"
+    "text": "See people who we think are likely to register to vote this election, then help them register! Enter in the county and age range you’re looking to visit, and it’ll automatically populate with the people who are most likely to move from “unaffiliated” to your party."
+  },
+  {
+    "objectID": "posts/maps/maps.html",
+    "href": "posts/maps/maps.html",
+    "title": "Maps of Voters",
+    "section": "",
+    "text": "Here’s a further break down by each of the major parties."
+  },
+  {
+    "objectID": "posts/maps/maps.html#maps-of-voters",
+    "href": "posts/maps/maps.html#maps-of-voters",
+    "title": "Party Maps",
+    "section": "",
+    "text": "Here’s a further break down by each of the major parties."
   }
 ]

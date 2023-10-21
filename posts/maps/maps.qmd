@@ -1,0 +1,27 @@
+---
+title: "Maps of Voters"
+format: html
+editor: visual
+---
+
+:::{.column-page}
+<iframe height="500" width="100%" frameborder="no" src="party_affiliation_map (1).html"> </iframe>
+:::
+
+Here's a further break down by each of the major parties.
+
+::: {.columns}
+::: {.column width="50%"}
+
+<iframe height="400" width="100%" frameborder="no" src="democrat_chart.html"> </iframe>
+:::
+
+::: {.column width="50%"}
+
+<iframe height="400" width="100%" frameborder="no" src="republican_chart.html"> </iframe>
+
+:::
+:::
+
+
+
