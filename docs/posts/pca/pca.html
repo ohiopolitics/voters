@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -61,6 +95,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+<script src="../../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="../../site_libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="../../site_libs/datatables-binding-0.30/datatables.js"></script>
+<link href="../../site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="../../site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="../../site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -138,52 +186,154 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
-<pre class="{r}"><code>library(tidyverse)
-library(arrow)
-vote &lt;- read_parquet('../../../SWVF_1_full.parquet')
-total_pop &lt;- 11756058*.728
-summary &lt;- vote %&gt;%
-  group_by(party_affiliation) %&gt;%
-  summarise(count=n())
-unregistered &lt;- total_pop - sum(summary$count)
-summary &lt;- summary %&gt;%
-  add_row(party_affiliation = 'Unregistered', count=unregistered)
-summary$party_affiliation &lt;- c('Unaffiliated','Democrat','Libertarian','Republican','Unregistered')
+<p>When we talk about Republicans and Democrats, it’s important to remember just how many more people are unaffiliated, and how many more don’t even register. Yes, there are more Republicans than Democrats, but a well-organized campaign in specific areas can reach a lot of people and have a big sway on the total votes.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(arrow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'arrow'
 
+The following object is masked from 'package:lubridate':
 
-ggplot(summary,aes(y=reorder(party_affiliation,count),
-                   x=count,
-                   fill=party_affiliation,
-                   label=paste(round(count/total_pop,2)*100),'%'))+
-  geom_col() +
-  theme_minimal() +
-  geom_text(nudge_x=90000) +
-  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey')+
-  theme(legend.position='none',
-        panel.grid.minor = element_blank()) +
-  scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +
-  labs(x='Total Voters (in thousands)',y='Party',title='Most People Haven\'t Registered')</code></pre>
-<pre class="{r}"><code>vote$age = 2023 - year(as_datetime(vote$date_of_birth))
+    duration
 
-vote &lt;- vote %&gt;% 
-  mutate(age_range = case_when(age &lt;= 25 ~ '18-25',
-                               age &lt;= 40 ~ '26-40',
-                               age &lt;= 64 ~ '40-64',
-                               age &gt; 64 ~ '65+'))
+The following object is masked from 'package:utils':
 
-age_sum &lt;- vote %&gt;%
-  group_by(age_range,party_affiliation) %&gt;%
-  summarise(count = n())
+    timestamp</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vote <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">'../../../SWVF_1_full.parquet'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age =</span> <span class="dv">2023</span> <span class="sc">-</span> <span class="fu">year</span>(<span class="fu">as_datetime</span>(date_of_birth)),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">age_range =</span> <span class="fu">case_when</span>(age <span class="sc">&lt;=</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">'18-25'</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                               age <span class="sc">&lt;=</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">'26-40'</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                               age <span class="sc">&lt;=</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">'40-64'</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                               age <span class="sc">&gt;</span> <span class="dv">64</span> <span class="sc">~</span> <span class="st">'65+'</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>vote[vote<span class="sc">==</span><span class="st">''</span>] <span class="ot">&lt;-</span> <span class="st">' '</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>total_pop <span class="ot">&lt;-</span> <span class="dv">11756058</span><span class="sc">*</span>.<span class="dv">728</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>summary <span class="ot">&lt;-</span> vote <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(party_affiliation) <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>())</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>unregistered <span class="ot">&lt;-</span> total_pop <span class="sc">-</span> <span class="fu">sum</span>(summary<span class="sc">$</span>count)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>summary <span class="ot">&lt;-</span> summary <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="at">party_affiliation =</span> <span class="st">'Unregistered'</span>, <span class="at">count=</span>unregistered)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(summary,<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">reorder</span>(party_affiliation,count),</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                   <span class="at">x=</span>count,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill=</span>party_affiliation,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                   <span class="at">label=</span><span class="fu">paste</span>(<span class="fu">round</span>(count<span class="sc">/</span>total_pop,<span class="dv">2</span>)<span class="sc">*</span><span class="dv">100</span>),<span class="st">'%'</span>))<span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">nudge_x=</span><span class="dv">90000</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">'R'</span><span class="ot">=</span><span class="st">'red'</span>,<span class="st">'D'</span><span class="ot">=</span><span class="st">'blue'</span>,<span class="st">'L'</span><span class="ot">=</span><span class="st">'yellow'</span>,<span class="st">' '</span><span class="ot">=</span><span class="st">'purple'</span>),<span class="at">na.value =</span> <span class="st">'grey'</span>)<span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">'none'</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">500000</span>,<span class="dv">1000000</span>,<span class="dv">5000000</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="st">'500'</span>,<span class="st">'1,000'</span>,<span class="st">'5,000'</span>)) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">'Total Voters (in thousands)'</span>,<span class="at">y=</span><span class="st">'Party'</span>,<span class="at">title=</span><span class="st">'Most People Haven</span><span class="sc">\'</span><span class="st">t Registered'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="pca_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>age_sum <span class="ot">&lt;-</span> vote <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age_range,party_affiliation) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'age_range'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>age_sum<span class="sc">$</span>party_affiliation <span class="ot">&lt;-</span> <span class="fu">replace</span>(age_sum<span class="sc">$</span>party_affiliation,<span class="at">values=</span><span class="fu">c</span>(<span class="st">' '</span><span class="ot">=</span><span class="st">'Unaffiliated'</span>,<span class="st">'D'</span><span class="ot">=</span><span class="st">'Democrat'</span>,<span class="st">'L'</span><span class="ot">=</span><span class="st">'Libertarian'</span>,<span class="st">'R'</span><span class="ot">=</span><span class="st">'Republican'</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>party_order <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Unaffiliated"</span>, <span class="st">"Republican"</span>, <span class="st">"Democrat"</span>, <span class="st">"Libertarian"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the Party variable as a factor with the desired order</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>age_sum<span class="sc">$</span>party_affiliation <span class="ot">&lt;-</span> <span class="fu">factor</span>(age_sum<span class="sc">$</span>party_affiliation, <span class="at">levels =</span> party_order)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>f<span class="ot">=</span> <span class="fu">ggplot</span>(age_sum, <span class="fu">aes</span>(<span class="at">x=</span>age_range,<span class="at">y=</span>count,<span class="at">fill=</span>party_affiliation,<span class="at">label=</span>count)) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position=</span><span class="st">'dodge'</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">'Republican'</span><span class="ot">=</span><span class="st">'red'</span>,<span class="st">'Democrat'</span><span class="ot">=</span><span class="st">'blue'</span>,<span class="st">'Libertarian'</span><span class="ot">=</span><span class="st">'yellow'</span>,<span class="st">'Unaffiliated'</span><span class="ot">=</span><span class="st">'purple'</span>),<span class="at">na.value =</span> <span class="st">'grey'</span>) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">100000</span>,<span class="dv">250000</span>,<span class="dv">500000</span>),</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels=</span><span class="fu">c</span>(<span class="st">'100,000'</span>,<span class="st">'250,000'</span>,<span class="st">'500,000'</span>)) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">'Number of Voters'</span>,<span class="at">x=</span><span class="st">'Age Range'</span>,<span class="at">title=</span><span class="st">'Affiliation by Age Range'</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill=</span><span class="st">'Party Affiliation'</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>f <span class="sc">%&gt;%</span> plotly<span class="sc">::</span><span class="fu">ggplotly</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e5b2ad467dbb77862873" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e5b2ad467dbb77862873">{"x":{"data":[{"orientation":"v","width":[0.22500000000000009,0.22500000000000009,0.22500000000000053,0.22500000000000053],"base":[0,0,0,0],"x":[0.66250000000000009,1.6625000000000001,2.6625000000000001,3.6625000000000001],"y":[185981,462951,578103,253305],"text":["age_range: 18-25<br />count: 185981<br />party_affiliation: Unaffiliated<br />count: 185981","age_range: 26-40<br />count: 462951<br />party_affiliation: Unaffiliated<br />count: 462951","age_range: 40-64<br />count: 578103<br />party_affiliation: Unaffiliated<br />count: 578103","age_range: 65+<br />count: 253305<br />party_affiliation: Unaffiliated<br />count: 253305"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Unaffiliated","legendgroup":"Unaffiliated","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.22500000000000009,0.22500000000000009,0.22499999999999964,0.22499999999999964],"base":[0,0,0,0],"x":[0.88749999999999996,1.8875,2.8875000000000002,3.8875000000000002],"y":[9464,29996,143528,170922],"text":["age_range: 18-25<br />count:   9464<br />party_affiliation: Republican<br />count:   9464","age_range: 26-40<br />count:  29996<br />party_affiliation: Republican<br />count:  29996","age_range: 40-64<br />count: 143528<br />party_affiliation: Republican<br />count: 143528","age_range: 65+<br />count: 170922<br />party_affiliation: Republican<br />count: 170922"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Republican","legendgroup":"Republican","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.22500000000000009,0.22499999999999987,0.22499999999999964,0.22499999999999964],"base":[0,0,0,0],"x":[1.1125,2.1124999999999998,3.1124999999999998,4.1124999999999998],"y":[11967,39598,100836,139364],"text":["age_range: 18-25<br />count:  11967<br />party_affiliation: Democrat<br />count:  11967","age_range: 26-40<br />count:  39598<br />party_affiliation: Democrat<br />count:  39598","age_range: 40-64<br />count: 100836<br />party_affiliation: Democrat<br />count: 100836","age_range: 65+<br />count: 139364<br />party_affiliation: Democrat<br />count: 139364"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Democrat","legendgroup":"Democrat","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.22500000000000009,0.22499999999999964,0.22500000000000053,0.22499999999999964],"base":[0,0,0,0],"x":[1.3374999999999999,2.3374999999999999,3.3374999999999999,4.3375000000000004],"y":[16,89,136,70],"text":["age_range: 18-25<br />count:     16<br />party_affiliation: Libertarian<br />count:     16","age_range: 26-40<br />count:     89<br />party_affiliation: Libertarian<br />count:     89","age_range: 40-64<br />count:    136<br />party_affiliation: Libertarian<br />count:    136","age_range: 65+<br />count:     70<br />party_affiliation: Libertarian<br />count:     70"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Libertarian","legendgroup":"Libertarian","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":66.484018264840202},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Affiliation by Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["18-25","26-40","40-64","65+"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["18-25","26-40","40-64","65+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-28905.150000000001,607008.15000000002],"tickmode":"array","ticktext":["100,000","250,000","500,000"],"tickvals":[100000,250000.00000000003,500000],"categoryorder":"array","categoryarray":["100,000","250,000","500,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Number of Voters","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Party Affiliation","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"653431bf5ba7":{"x":{},"y":{},"fill":{},"label":{},"type":"bar"}},"cur_data":"653431bf5ba7","visdat":{"653431bf5ba7":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>If you want to see the full official registration, use the county breakdown below.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>codes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'../../County Codes.csv'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>county  <span class="ot">&lt;-</span> vote <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(party_affiliation,county_number) <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> codes<span class="sc">$</span>County[county_number]) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(county,party_affiliation,count) <span class="sc">%&gt;%</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>party_affiliation,<span class="at">values_from=</span>count)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#colnames(county) &lt;- c('County','Democrats','Republicans','Libertarian','Unaffiliated')</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(county)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
 
-f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation)) +
-  geom_col(position='dodge')
-
-f %&gt;% plotly::ggplotly()</code></pre>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fb164e56ba41524abdde" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fb164e56ba41524abdde">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22"],["Adams County","Allen County","Ashland County","Ashtabula County","Athens County","Auglaize County","Belmont County","Brown County","Butler County","Carroll County","Champaign County","Clark County","Clermont County","Clinton County","Columbiana County","Coshocton County","Crawford County","Cuyahoga County","Darke County","Defiance County","Delaware County","Erie County"],[11664,44320,22513,41676,26628,20921,30432,21032,179998,11897,16955,59421,101905,17618,44877,12775,18341,616407,20956,17112,104753,37381],[914,5040,2258,7283,6731,1480,4800,1740,18349,1474,1896,8972,10859,1195,5408,1779,1811,178857,1798,2306,19394,7210],[null,16,6,21,4,17,5,null,null,null,9,null,null,8,null,9,11,122,null,7,67,9],[4513,16193,9626,11134,4028,9704,8496,6124,43898,4653,7411,18028,32321,8329,14284,7402,7351,78895,11443,6692,34678,8589]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>county<\/th>\n      <th> <\/th>\n      <th>D<\/th>\n      <th>L<\/th>\n      <th>R<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Counties like Athens usually have a large university, while Delaware County have more middle-aged populations.</p>
+<div class="cell page-columns page-full">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>countyage <span class="ot">&lt;-</span> vote <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">county =</span> codes<span class="sc">$</span>County[county_number],</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">county =</span> <span class="fu">str_replace</span>(county,<span class="st">'County'</span>,<span class="st">''</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&lt;</span> <span class="dv">100</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(countyage,<span class="fu">aes</span>(<span class="at">x=</span>age)) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(countyage<span class="sc">$</span>county),<span class="at">ncol =</span> <span class="dv">8</span>)<span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">'Demographic Breakdown by County'</span>,<span class="at">x=</span><span class="st">'Age'</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">'Density of Age'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display column-screen-inset-shaded">
+<p><img src="pca_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 

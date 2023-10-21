@@ -14,7 +14,13 @@ When we talk about Republicans and Democrats, it's important to remember just ho
 ```{r}
 library(tidyverse)
 library(arrow)
-vote <- read_parquet('../../../SWVF_1_full.parquet')
+vote <- read_parquet('../../../SWVF_1_full.parquet') %>%
+  mutate(age = 2023 - year(as_datetime(date_of_birth)),
+         age_range = case_when(age <= 25 ~ '18-25',
+                               age <= 40 ~ '26-40',
+                               age <= 64 ~ '40-64',
+                               age > 64 ~ '65+'))
+vote[vote==''] <- ' '
 total_pop <- 11756058*.728
 summary <- vote %>%
   group_by(party_affiliation) %>%
@@ -22,8 +28,6 @@ summary <- vote %>%
 unregistered <- total_pop - sum(summary$count)
 summary <- summary %>%
   add_row(party_affiliation = 'Unregistered', count=unregistered)
-summary$party_affiliation <- c('Unaffiliated','Democrat','Libertarian','Republican','Unregistered')
-
 
 ggplot(summary,aes(y=reorder(party_affiliation,count),
                    x=count,
@@ -32,7 +36,7 @@ ggplot(summary,aes(y=reorder(party_affiliation,count),
   geom_col() +
   theme_minimal() +
   geom_text(nudge_x=90000) +
-  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey')+
+  scale_fill_manual(values=c('R'='red','D'='blue','L'='yellow',' '='purple'),na.value = 'grey')+
   theme(legend.position='none',
         panel.grid.minor = element_blank()) +
   scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +
@@ -42,21 +46,22 @@ ggplot(summary,aes(y=reorder(party_affiliation,count),
 Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.
 
 ```{r}
-vote$age = 2023 - year(as_datetime(vote$date_of_birth))
-
-vote <- vote %>% 
-  mutate(age_range = case_when(age <= 25 ~ '18-25',
-                               age <= 40 ~ '26-40',
-                               age <= 64 ~ '40-64',
-                               age > 64 ~ '65+'))
-
 age_sum <- vote %>%
   group_by(age_range,party_affiliation) %>%
   summarise(count = n())
+age_sum$party_affiliation <- replace(age_sum$party_affiliation,values=c(' '='Unaffiliated','D'='Democrat','L'='Libertarian','R'='Republican'))
+party_order <- c("Unaffiliated", "Republican", "Democrat", "Libertarian")
 
-f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation)) +
-  geom_col(position='dodge')
-
+# Set the Party variable as a factor with the desired order
+age_sum$party_affiliation <- factor(age_sum$party_affiliation, levels = party_order)
+f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation,label=count)) +
+  geom_col(position='dodge') +
+  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey') +
+  theme_minimal() +
+  scale_y_continuous(breaks=c(100000,250000,500000),
+                     labels=c('100,000','250,000','500,000')) +
+  labs(y='Number of Voters',x='Age Range',title='Affiliation by Age Range',
+       fill='Party Affiliation')
 f %>% plotly::ggplotly()
 ```
 
@@ -66,13 +71,13 @@ If you want to see the full official registration, use the county breakdown belo
 library(DT)
 codes <- read_csv('../../County Codes.csv')
 county  <- vote %>% 
+  filter(age < 100) %>%
   group_by(party_affiliation,county_number) %>%
   summarise(count=n()) %>%
   mutate(county = codes$County[county_number]) %>%
   select(county,party_affiliation,count) %>%
-  filter(age < 100) %>%
   pivot_wider(names_from=party_affiliation,values_from=count)
-colnames(county) <- c('County','Democrats','Republicans','Libertarian','Unaffiliated')
+#colnames(county) <- c('County','Democrats','Republicans','Libertarian','Unaffiliated')
 datatable(county)
 ```
 

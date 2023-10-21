@@ -1,5 +1,33 @@
 ---
-title: ""
+title: "About Us"
 ---
 
-lmao
+**We're all** data scientists who enjoy finding stories in unexpected places and opening up information to the public. We've worked at political consulting companies and studied political elections from the ground up, and want to share what we've learned.
+
+::: columns
+::: {.column width="25%"}
+![](Pictures/Sigmund.jpg)
+:::
+::: {.column width="75%"}
+**Sigmund Serranilla** is a .... here etc etc
+:::
+::: {.column width="75%"}
+**Spencer Driggs** is a data science student at BYU-Idaho. He currently works as a data journalist for *Scroll*, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and imagining he'll finish his one-act play some day.
+:::
+::: {.column width="25%"}
+![](Pictures/Spencer.jpg)
+:::
+::: {.column width="25%"}
+![](Pictures/AJ.jpg)
+:::
+::: {.column width="75%"}
+**AJ Averett** blah blah
+:::
+::: {.column width="75%"}
+**Addison Pratt** blah blah blah
+:::
+::: {.column width="25%"}
+![](Pictures/addison.jpg)
+:::
+:::
+
