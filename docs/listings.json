@@ -3,8 +3,10 @@
     "listing": "/index.html",
     "items": [
       "/posts/canvassers/power_triangle.html",
+      "/posts/maps/maps.html",
       "/posts/registrars/registrar.html",
-      "/posts/treasurers/donations.html"
+      "/posts/treasurers/donations.html",
+      "/posts/demsvrep/demvrep.html"
     ]
   },
   {
