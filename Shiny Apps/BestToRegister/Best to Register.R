@@ -24,7 +24,7 @@ ui <- fluidPage(
       selectInput("county", "Select County:", 
                          choices = unique(counties$County),
                          selected = "Adams"),
-      selectInput("age_category", "Select Age Category:", choices = c("All", "Under 18", "18-35", "36-60", "Over 60")),
+      selectInput("age_category", "Select Age Category:", choices = c("All", "18-24", "25-34","35-44","45-54","55-64","65+")),
       numericInput("num_results", "Number of Results:", value = 10, min = 1),
       downloadButton("download_csv", "Download Filtered Results")
     ),
@@ -48,9 +48,12 @@ server <- function(input, output)
       
       if (input$age_category != "All") {
         age_ranges <- list(
-          "18-35" = c(18, 35),
-          "36-60" = c(36, 60),
-          "Over 60" = c(61, max(filtered$Age))
+          "18-24" = c(18, 24),
+          "25-34" = c(25, 34),
+          "35-44" = c(35, 44),
+          "45-54" = c(45,54),
+          "55-64" = c(55,64),
+          "65+" = c(65, max(filtered$Age))
         )
         age_range <- age_ranges[[input$age_category]]
         filtered <- filter(filtered, Age >= age_range[1] & Age <= age_range[2])

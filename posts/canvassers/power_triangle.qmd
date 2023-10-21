@@ -2,8 +2,12 @@
 title: "For Canvassers"
 image: "canvass.jpg"
 jupyter: python3
+format:
+  html:
+    page-layout: full
 ---
 
 Find voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you'd like to visit, and this will automatically pick the people in that area that we predict are most likely to respond favorably to your message.
 
-<iframe height="700" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/VotersOnTheFence/"> </iframe>
+
+<iframe height="800" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/VotersOnTheFence/"> </iframe>

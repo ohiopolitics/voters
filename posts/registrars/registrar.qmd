@@ -1,12 +1,15 @@
 ---
-title: ""
+title: "For Registrars"
 image: "registrar.jpg"
 format:
   html:
     code-fold: true
     code-summary: "Show the code"
+    page-layout: full
+css: [custom.css]
 ---
 
 See people who we think are likely to register to vote this election, then help them register!
+
 
 <iframe height="1000" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/"> </iframe>

@@ -1,0 +1,11 @@
+{
+  "hash": "5f447c36f73a2d5ec6ced476e99811d4",
+  "result": {
+    "markdown": "---\ntitle: For Treasurers\nimage: money.jpg\nformat:\n  html:\n    page-layout: full\n---\n\nGet the names and addresses of voters who are already sympathetic to your party and may be willing to donate.\n\n<iframe height=\"800\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/GetDonations/\"> </iframe>\n\n",
+    "supporting": [
+      "donations_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "**Ohio Voters**",
     "section": "",
-    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Canvassers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Treasurers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Canvassers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Registrars\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Treasurers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/power_triangle/power_triangle.html",
@@ -142,7 +142,7 @@
   {
     "objectID": "posts/registrars/index.html",
     "href": "posts/registrars/index.html",
-    "title": "**Ohio Voters**",
+    "title": "For Registrars",
     "section": "",
     "text": "See people who we think are likely to register to vote this election, then help them register!"
   },
@@ -152,5 +152,26 @@
     "title": "The Journey of Data",
     "section": "",
     "text": "The Journey of Data\n    From raw data to revealing discoveries, follow the transformative path of our dataset.\n\n    \n\n        \n            1. Raw Data Collection\n            The secretary of state department of each state releases the raw voter file- this data, dependiing on state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. \n        \n\n        \n\n        \n            2. Geo-encoding\n            Using the registered address information, we enrich the data by assigning geographical coordinates, allowing for geospatial analysis. This is done through a process called geo-encoding with the United States census API\n        \n\n        \n\n        \n            3. Join with Geospatial Datasets\n            By joining our data with public geospatial datasets, we gain a deeper spatial context. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust information about each voter\n        \n\n        \n\n        \n            4. Data Cleanup\n            We refine the dataset by eliminating anomalies, ensuring accuracy and relevance. This is done by making sure all variables are appropriate for machine learning models\n        \n\n        \n\n        \n            5. Machine Learning\n            We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout liklihood, Republican liklihood, and Democrat liklihood. These three variables are scored from 0 to 1.\n        \n\n        \n\n        \n            6. Discovery of Trends & Analyses\n            With our refined data, we are equipped to uncover meaningful trends and analyses."
+  },
+  {
+    "objectID": "posts/canvassers/power_triangle.html",
+    "href": "posts/canvassers/power_triangle.html",
+    "title": "For Canvassers",
+    "section": "",
+    "text": "Find voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you’d like to visit, and this will automatically pick the people in that area that we predict are most likely to respond favorably to your message."
+  },
+  {
+    "objectID": "posts/treasurers/donations.html",
+    "href": "posts/treasurers/donations.html",
+    "title": "For Treasurers",
+    "section": "",
+    "text": "Get the names and addresses of voters who are already sympathetic to your party and may be willing to donate."
+  },
+  {
+    "objectID": "posts/registrars/registrar.html",
+    "href": "posts/registrars/registrar.html",
+    "title": "For Registrars",
+    "section": "",
+    "text": "See people who we think are likely to register to vote this election, then help them register!"
   }
 ]
