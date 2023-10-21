@@ -11,7 +11,7 @@ title: "About Us"
     <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
         <div style="width: 5%;"></div>
         <div style="width: 20%; text-align: center;">
-            <img src="Pictures/Sigmund.jpg" style="width: 10rem; border-radius: 50%;">
+            <img src="images/Sigmund.jpg" style="width: 10rem; border-radius: 50%;">
         </div>
         <div style="width: 5%;"></div>
         <div style="width: 70%;">
@@ -25,7 +25,7 @@ title: "About Us"
         </div>
         <div style="width: 5%;"></div>
         <div style="width: 20%; text-align: center;">
-            <img src="Pictures/Spencer.jpg" style="width: 10rem; border-radius: 50%;">
+            <img src="images/Spencer.jpg" style="width: 10rem; border-radius: 50%;">
         </div>
         <div style="width: 5%;"></div>
     </div>
@@ -33,7 +33,7 @@ title: "About Us"
     <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
         <div style="width: 5%;"></div>
         <div style="width: 20%; text-align: center;">
-            <img src="Pictures/AJ.jpg" style="width: 10rem; border-radius: 50%;">
+            <img src="images/AJ.jpg" style="width: 10rem; border-radius: 50%;">
         </div>
         <div style="width: 5%;"></div>
         <div style="width: 70%;">
@@ -47,7 +47,7 @@ title: "About Us"
         </div>
         <div style="width: 5%;"></div>
         <div style="width: 20%; text-align: center;">
-            <img src="Pictures/addison.jpg" style="width: 10rem; border-radius: 50%;">
+            <img src="images/addison.jpg" style="width: 10rem; border-radius: 50%;">
         </div>
         <div style="width: 5%;"></div>
     </div>
