@@ -7,6 +7,7 @@ about:
     - text: "GitHub"
       icon: github
       href: "https://github.com/ohiopolitics"
+    
 # https://quarto.org/docs/websites/website-listings.html
 listing:
   contents: posts
