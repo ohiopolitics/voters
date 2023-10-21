@@ -70,7 +70,24 @@ county  <- vote %>%
   summarise(count=n()) %>%
   mutate(county = codes$County[county_number]) %>%
   select(county,party_affiliation,count) %>%
+  filter(age < 100) %>%
   pivot_wider(names_from=party_affiliation,values_from=count)
 colnames(county) <- c('County','Democrats','Republicans','Libertarian','Unaffiliated')
 datatable(county)
+```
+
+Counties like Athens usually have a large university, while Delaware County have more middle-aged populations. 
+
+```{r}
+#| column: screen-inset-shaded
+countyage <- vote %>%
+  mutate(county = codes$County[county_number],
+         county = str_replace(county,'County','')) %>%
+  filter(age < 100)
+ggplot(countyage,aes(x=age)) +
+  geom_density()+
+  facet_wrap(vars(countyage$county),ncol = 8)+
+  theme_minimal() +
+  labs(title='Demographic Breakdown by County',x='Age',
+       y='Density of Age')
 ```
