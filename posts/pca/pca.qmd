@@ -8,6 +8,9 @@ format:
   html:
     code-fold: true
 ---
+
+When we talk about Republicans and Democrats, it's important to remember just how many more people are unaffiliated, and how many more don't even register. Yes, there are more Republicans than Democrats, but a well-organized campaign in specific areas can reach a lot of people and have a big sway on the total votes.
+
 ```{r}
 library(tidyverse)
 library(arrow)
@@ -35,6 +38,8 @@ ggplot(summary,aes(y=reorder(party_affiliation,count),
   scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +
   labs(x='Total Voters (in thousands)',y='Party',title='Most People Haven\'t Registered')
 ```
+
+Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.
 
 ```{r}
 vote$age = 2023 - year(as_datetime(vote$date_of_birth))
@@ -66,6 +71,6 @@ county  <- vote %>%
   mutate(county = codes$County[county_number]) %>%
   select(county,party_affiliation,count) %>%
   pivot_wider(names_from=party_affiliation,values_from=count)
-colnames(county) <- c('County','Democrats','Republicans','Unaffiliated')
+colnames(county) <- c('County','Democrats','Republicans','Libertarian','Unaffiliated')
 datatable(county)
 ```
