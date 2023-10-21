@@ -11,7 +11,7 @@ library(shiny)
 library(arrow)
 library(tidyverse)
 results <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/Shiny%20Apps/Example%20Model%20Outputs.csv')
-
+counties <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/Spencer%20Misc/County%20Codes.csv')
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   titlePanel("Find Voters on the Fence"),
@@ -20,9 +20,9 @@ ui <- fluidPage(
       radioButtons('demrep',"Select your Affiliation:",
                    choices = c("Democrat","Republican"),
                    selected = 'Democrat'),
-      checkboxGroupInput("precinct", "Select Precinct:", 
-                         choices = unique(results$Precinct),
-                         selected = unique(results$Precinct)),
+      checkboxGroupInput("county", "Select Precinct:", 
+                         choices = unique(counties$County),
+                         selected = unique(results$County)),
       selectInput("age_category", "Select Age Category:", choices = c("All", "Under 18", "18-35", "36-50", "Over 50")),
       numericInput("num_results", "Number of Results:", value = 10, min = 1),
       downloadButton("download_csv", "Download Filtered Results")
@@ -42,7 +42,8 @@ server <- function(input, output)
   # Create a reactive expression for filtered results
   filtered_data <- reactive({
     # Filter the results dataframe based on user inputs
-    filtered <- results
+    filtered <- tibble()
+    for (county in input$)
     
     if (input$age_category != "All") {
       age_ranges <- list(

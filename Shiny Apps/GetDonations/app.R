@@ -22,7 +22,7 @@ ui <- fluidPage(
                    selected = 'Democrat'),
       checkboxGroupInput("precinct", "Select Precinct:", 
                          choices = unique(results$Precinct),
-                         selected = unique(results$Precinct)),
+                         selected = "Adams"),
       selectInput("age_category", "Select Age Category:", choices = c("All", "Under 18", "18-35", "36-50", "Over 50")),
       numericInput("num_results", "Number of Results:", value = 10, min = 1),
       downloadButton("download_csv", "Download Filtered Results")
