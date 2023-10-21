@@ -1,0 +1,80 @@
+---
+title: "Ohio Voters"
+author: "Data Wizards"
+date: "20 October, 2023"
+execute:
+  keep-md: false
+  warning: false
+format:
+  html:
+    code-fold: true
+    code-line-numbers: true
+---
+### Welcome to the template for our website
+
+---
+title: ""
+page-layout: full
+resources: resume.pdf
+about: 
+    template: marquee
+    links: 
+    - text: "GitHub"
+      icon: github
+      href: "https://github.com/ajaverett"
+    - text: LinkedIn
+      icon: linkedin
+      href: https://www.linkedin.com/in/ajaverett/
+    - text: Resume
+      icon: file-text
+      href: "resume.pdf"
+    - text: Email
+      icon: envelope
+      href: mailto:ajaverett0@Gmail.com
+# https://quarto.org/docs/websites/website-listings.html
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: false
+  feed: true
+---
+
+<!-- HERO SECTION -->
+::: {.column-screen}
+![](images/bg_hero.png){style="transform: translateY(-5em); height: 10% !important;"}
+:::
+
+
+<!-- ME SECTION -->
+:::: columns
+
+<!-- COL1 -->
+::: {.column width="70%"}
+
+# Meet Aj!
+
+### Data Scientist
+
+I'm a data scientist with a passion for Python, R, data visualization, and statistics/machine learning. 
+
+:::
+
+<!-- COL 2 (SPACE) -->
+::: {.column width="10%"}
+
+:::
+
+<!-- COL 3 -->
+::: {.column width="20%"}
+
+<br> ![](images/portrait.png){width="130%"}
+
+:::
+
+::::
+
+Here's where we start to put stuff I guess.
+
+
+<br><br>
