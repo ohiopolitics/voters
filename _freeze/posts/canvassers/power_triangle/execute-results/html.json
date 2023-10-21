@@ -1,7 +1,7 @@
 {
-  "hash": "48bc8600df136fad8998e76f0e33b711",
+  "hash": "fe6e5866742e01fe5865043e0e78dc39",
   "result": {
-    "markdown": "---\ntitle: For Canvassers\nimage: canvass.jpg\nformat:\n  html:\n    page-layout: full\n---\n\nFind voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you'd like to visit, and this will automatically pick the people in that area that we predict are most likely to respond favorably to your message.\n\n\n<iframe height=\"700\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/VotersOnTheFence/\"> </iframe>\n\n",
+    "markdown": "---\ntitle: For Canvassers\nimage: canvass.jpg\nformat:\n  html:\n    page-layout: full\n---\n\nFind voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you'd like to visit, and this will automatically pick the people in that area who have middle-range views. With their name and address, you can go tell them about your platform and sway their vote!\n\n\n::: {.column-screen}\n<iframe height=\"800\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/VotersOnTheFence/\"> </iframe>\n:::\n\n",
     "supporting": [
       "power_triangle_files"
     ],

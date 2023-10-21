@@ -10,4 +10,6 @@ format:
 Find voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you'd like to visit, and this will automatically pick the people in that area who have middle-range views. With their name and address, you can go tell them about your platform and sway their vote!
 
 
+::: {.column-screen}
 <iframe height="800" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/VotersOnTheFence/"> </iframe>
+:::

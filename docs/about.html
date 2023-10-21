@@ -125,54 +125,101 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-    <h2 style="text-align: center;" class="anchored">About Us</h2>
-    <p style="font-weight: bold;">We're all</p> data scientists who enjoy finding stories in unexpected places and opening up information to the public. We've worked at political consulting companies and studied political elections from the ground up, and want to share what we've learned.
 
-    <hr>
+<style>
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    
+    .profile-container img {
+        width: 100%;
+        max-width: 10rem;
+        border-radius: 50%;
+    }
+    
+    .profile-text {
+        width: 70%;
+    }
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <div style="width: 5%;"></div>
-        <div style="width: 20%; text-align: center;">
-            <img src="images/Sigmund.jpg" style="width: 10rem; border-radius: 50%;">
-        </div>
-        <div style="width: 5%;"></div>
-        <div style="width: 70%;">
-            <p><strong>Sigmund Serranilla</strong> is a proud Filipino-American who is pursuing a degree in Data Science at BYU-Idaho. He is passionate about using data to help people make better decisions. Sigmund has worked coast to coast from Los Angeles, to Boston as a data science intern. As a data scientist he has worked in the energy sector and in HR and loves using data to help make informed decisions in those industries.</p>
-        </div>
-    </div>
+    .profile-image {
+        width: 20%;
+        text-align: center;
+        padding: 1rem; /* Add padding around the image */
+    }
+    
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <div style="width: 70%;">
-            <p><strong>Spencer Driggs</strong>, a Chicago native, is a data science student at BYU-Idaho. He currently works as a data journalist for <em>Scroll</em>, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like <a href="https://www.youtube.com/watch?v=ZlviajJlctQ&amp;t=293s&amp;pp=ygUKZGF2ZSBzdGVpYg%3D%3D" target="_blank">Jon Bois</a> can.</p>
-        </div>
-        <div style="width: 5%;"></div>
-        <div style="width: 20%; text-align: center;">
-            <img src="images/Spencer.jpg" style="width: 10rem; border-radius: 50%;">
-        </div>
-        <div style="width: 5%;"></div>
-    </div>
+    @media only screen and (max-width: 768px) {
+        .profile-container {
+            flex-direction: column;
+        }
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <div style="width: 5%;"></div>
-        <div style="width: 20%; text-align: center;">
-            <img src="images/AJ.jpg" style="width: 10rem; border-radius: 50%;">
-        </div>
-        <div style="width: 5%;"></div>
-        <div style="width: 70%;">
-            <p><strong>Aj Averett</strong>, a proud resident from Austin, Texas who loves solving mysteries with data. Aj has always been fascinated with the intersection of social science, statistics, and computer science. He worked at a pollster for his internship and has been hooked ever since. He is currently a data science student at BYU-Idaho. When he's not working on data projects, he enjoys playing the piano and reading. In the words of Sir Francis Galton, "Whenever you can, count".</p>
-        </div>
-    </div>
+        .profile-text, .profile-image {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .profile-text {
+            margin-top: 1rem;
+        }
+    }
+</style>
 
-    <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
-        <div style="width: 70%;">
-            <p><strong>Addison Pratt</strong>, hailing from Calgary, seeks to uncover truth by analyzing data and leveraging it to solve everyday problems. He previously worked as a political data scientist on Capitol Hill D.C. where developed models to predict voting patterns across the country. His main interests in data science are refining skills in machine learning, biostatistics, and data visualization. In his free time, he loves to cook, speak Spanish and be outdoors.</p>
-        </div>
-        <div style="width: 5%;"></div>
-        <div style="width: 20%; text-align: center;">
-            <img src="images/addison.jpg" style="width: 10rem; border-radius: 50%;">
-        </div>
-        <div style="width: 5%;"></div>
-    </div>
+<p style="font-weight: bold;">We're all</p> data scientists who enjoy finding stories in unexpected places and opening up information to the public. We've worked at political consulting companies and studied political elections from the ground up, and want to share what we've learned.
+
+<hr>
+
+<div id="profiles"></div>
+
+<script>
+const profilesData = [
+    {
+        image: "images/sigmund.jpg",
+        name: "Sigmund Serranilla",
+        description: " is a proud Filipino-American who is pursuing a degree in Data Science at BYU-Idaho. He is passionate about using data to help people make better decisions. Sigmund has worked coast to coast from Los Angeles, to Boston as a data science intern. As a data scientist he has worked in the energy sector and in HR and loves using data to help make informed decisions in those industries."
+    },
+    {
+        image: "images/spencer.jpg",
+        name: "Spencer Driggs",
+        description: ", a Chicago native, is a data science student at BYU-Idaho. He currently works as a data journalist for Scroll, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like Jon Bois can."
+    },
+    {
+        image: "images/aj.jpg",
+        name: "Aj Averett",
+        description: ", a proud resident from Austin, Texas who loves solving mysteries with data. Aj has always been fascinated with the intersection of social science, statistics, and computer science. He worked at a pollster for his internship and has been hooked ever since. He is currently a data science student at BYU-Idaho. When he's not working on data projects, he enjoys playing the piano and reading. In the words of Sir Francis Galton, 'Whenever you can, count'."
+    },
+    {
+        image: "images/addison.jpg",
+        name: "Addison Pratt",
+        description: ", hailing from Calgary, seeks to uncover truth by analyzing data and leveraging it to solve everyday problems. He previously worked as a political data scientist on Capitol Hill D.C. where developed models to predict voting patterns across the country. His main interests in data science are refining skills in machine learning, biostatistics, and data visualization. In his free time, he loves to cook, speak Spanish and be outdoors."
+    }
+];
+
+
+    const profilesContainer = document.getElementById('profiles');
+
+    profilesData.forEach(profile => {
+        const profileDiv = document.createElement('div');
+        profileDiv.className = 'profile-container';
+
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'profile-image';
+        const img = document.createElement('img');
+        img.src = profile.image;
+        imageDiv.appendChild(img);
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'profile-text';
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${profile.name}</strong> ${profile.description}`;
+        textDiv.appendChild(p);
+
+        profileDiv.appendChild(imageDiv);
+        profileDiv.appendChild(textDiv);
+        profilesContainer.appendChild(profileDiv);
+    });
+</script>
 
 
 
