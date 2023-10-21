@@ -1,6 +1,6 @@
 ---
 title: "For Registrars"
-image: "registrar.jpg"
+image: "registrar.webp"
 format:
   html:
     code-fold: true

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -82,6 +82,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -114,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><strong>Ohio Voters</strong></span>
     </a>
@@ -126,21 +131,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../process.html" rel="" target="">
- <span class="menu-text">Our Process</span></a>
+    <a class="nav-link" href="../../process.html"> 
+<span class="menu-text">Our Process</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -237,8 +242,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>f <span class="sc">%&gt;%</span> plotly<span class="sc">::</span><span class="fu">ggplotly</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f9b9536195df32ebcf58" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f9b9536195df32ebcf58">{"x":{"data":[{"orientation":"v","width":1015030,"base":2.5499999999999998,"x":[507515],"y":[0.90000000000000036],"text":"count: 1015030<br />reorder(party_affiliation, count): Democrat<br />party_affiliation: Democrat","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Democrat","legendgroup":"Democrat","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":5445637,"base":4.5499999999999998,"x":[2722818.5],"y":[0.90000000000000036],"text":"count: 5445637<br />reorder(party_affiliation, count): Independent<br />party_affiliation: Independent","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Independent","legendgroup":"Independent","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":1786,"base":0.55000000000000004,"x":[893],"y":[0.89999999999999991],"text":"count:    1786<br />reorder(party_affiliation, count): Libertarian<br />party_affiliation: Libertarian","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Libertarian","legendgroup":"Libertarian","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":1337527,"base":3.5499999999999998,"x":[668763.5],"y":[0.90000000000000036],"text":"count: 1337527<br />reorder(party_affiliation, count): Republican<br />party_affiliation: Republican","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Republican","legendgroup":"Republican","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":758430,"base":1.55,"x":[379215],"y":[0.90000000000000013],"text":"count:  758430<br />reorder(party_affiliation, count): Unregistered<br />party_affiliation: Unregistered","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(169,169,169,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Unregistered","legendgroup":"Unregistered","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":40.182648401826491,"l":95.707762557077658},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-272281.85000000003,5717918.8499999996],"tickmode":"array","ticktext":["0","2,000,000","4,000,000"],"tickvals":[0,2000000,3999999.9999999995],"categoryorder":"array","categoryarray":["0","2,000,000","4,000,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Total Voters (in thousands)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Libertarian","Unregistered","Democrat","Republican","Independent"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Libertarian","Unregistered","Democrat","Republican","Independent"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Party","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"219c1bfa420f":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"219c1bfa420f","visdat":{"219c1bfa420f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5e8bb672835940f7fb37" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5e8bb672835940f7fb37">{"x":{"data":[{"orientation":"v","width":1015030,"base":2.5499999999999998,"x":[507515],"y":[0.90000000000000036],"text":"count: 1015030<br />reorder(party_affiliation, count): Democrat<br />party_affiliation: Democrat","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Democrat","legendgroup":"Democrat","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":5445637,"base":4.5499999999999998,"x":[2722818.5],"y":[0.90000000000000036],"text":"count: 5445637<br />reorder(party_affiliation, count): Independent<br />party_affiliation: Independent","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(160,32,240,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Independent","legendgroup":"Independent","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":1786,"base":0.55000000000000004,"x":[893],"y":[0.89999999999999991],"text":"count:    1786<br />reorder(party_affiliation, count): Libertarian<br />party_affiliation: Libertarian","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Libertarian","legendgroup":"Libertarian","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":1337527,"base":3.5499999999999998,"x":[668763.5],"y":[0.90000000000000036],"text":"count: 1337527<br />reorder(party_affiliation, count): Republican<br />party_affiliation: Republican","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Republican","legendgroup":"Republican","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":758430,"base":1.55,"x":[379215],"y":[0.90000000000000013],"text":"count:  758430<br />reorder(party_affiliation, count): Unregistered<br />party_affiliation: Unregistered","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(169,169,169,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Unregistered","legendgroup":"Unregistered","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":40.182648401826491,"l":95.707762557077658},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-272281.85000000003,5717918.8499999996],"tickmode":"array","ticktext":["0","2,000,000","4,000,000"],"tickvals":[0,2000000,3999999.9999999995],"categoryorder":"array","categoryarray":["0","2,000,000","4,000,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Total Voters (in thousands)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Libertarian","Unregistered","Democrat","Republican","Independent"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Libertarian","Unregistered","Democrat","Republican","Independent"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Party","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"240c2fad405a":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"240c2fad405a","visdat":{"240c2fad405a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.</p>
@@ -273,8 +278,8 @@ argument.</code></pre>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>f <span class="sc">%&gt;%</span> plotly<span class="sc">::</span><span class="fu">ggplotly</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-647f633f0f87806f31d9" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-647f633f0f87806f31d9">{"x":{"data":[{"orientation":"v","width":[128,448,786,424],"base":[0.55000000000000004,1.55,2.5499999999999998,3.5499999999999998],"x":[64,224,393,212],"y":[0.22500000000000009,0.22500000000000009,0.22500000000000053,0.22500000000000053],"text":["count:     128<br />age: 18-25<br />party_affiliation: Libertarian<br />count:     128","count:     448<br />age: 26-40<br />party_affiliation: Libertarian<br />count:     448","count:     786<br />age: 41-64<br />party_affiliation: Libertarian<br />count:     786","count:     424<br />age: 65+<br />party_affiliation: Libertarian<br />count:     424"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Libertarian","legendgroup":"Libertarian","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[682005,1742646,2113711,907275],"base":[0.77499999999999991,1.7749999999999999,2.7750000000000004,3.7750000000000004],"x":[341002.5,871323,1056855.5,453637.5],"y":[0.22500000000000009,0.22500000000000009,0.22499999999999964,0.22499999999999964],"text":["count:  682005<br />age: 18-25<br />party_affiliation: Independent<br />count:  682005","count: 1742646<br />age: 26-40<br />party_affiliation: Independent<br />count: 1742646","count: 2113711<br />age: 41-64<br />party_affiliation: Independent<br />count: 2113711","count:  907275<br />age: 65+<br />party_affiliation: Independent<br />count:  907275"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Independent","legendgroup":"Independent","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[36103,119534,542148,639742],"base":[1,1.9999999999999998,3,4],"x":[18051.5,59767,271074,319871],"y":[0.22500000000000009,0.22499999999999987,0.22499999999999964,0.22499999999999964],"text":["count:   36103<br />age: 18-25<br />party_affiliation: Republican<br />count:   36103","count:  119534<br />age: 26-40<br />party_affiliation: Republican<br />count:  119534","count:  542148<br />age: 41-64<br />party_affiliation: Republican<br />count:  542148","count:  639742<br />age: 65+<br />party_affiliation: Republican<br />count:  639742"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Republican","legendgroup":"Republican","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[41595,142062,348972,482401],"base":[1.2249999999999999,2.2250000000000001,3.2249999999999996,4.2250000000000005],"x":[20797.5,71031,174486,241200.5],"y":[0.22500000000000009,0.22499999999999964,0.22500000000000053,0.22499999999999964],"text":["count:   41595<br />age: 18-25<br />party_affiliation: Democrat<br />count:   41595","count:  142062<br />age: 26-40<br />party_affiliation: Democrat<br />count:  142062","count:  348972<br />age: 41-64<br />party_affiliation: Democrat<br />count:  348972","count:  482401<br />age: 65+<br />party_affiliation: Democrat<br />count:  482401"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Democrat","legendgroup":"Democrat","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":54.794520547945211},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Affiliation by Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-105685.55,2219396.5499999998],"tickmode":"array","ticktext":["0","500,000","1,000,000","1,500,000","2,000,000"],"tickvals":[0,500000.00000000006,1000000,1500000,1999999.9999999998],"categoryorder":"array","categoryarray":["0","500,000","1,000,000","1,500,000","2,000,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Number of Voters","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["18-25","26-40","41-64","65+"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["18-25","26-40","41-64","65+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Party Affiliation","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"219c8b15254":{"x":{},"y":{},"fill":{},"label":{},"type":"bar"}},"cur_data":"219c8b15254","visdat":{"219c8b15254":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e3fed897b048945d4c3d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e3fed897b048945d4c3d">{"x":{"data":[{"orientation":"v","width":[128,448,786,424],"base":[0.55000000000000004,1.55,2.5499999999999998,3.5499999999999998],"x":[64,224,393,212],"y":[0.22500000000000009,0.22500000000000009,0.22500000000000053,0.22500000000000053],"text":["count:     128<br />age: 18-25<br />party_affiliation: Libertarian<br />count:     128","count:     448<br />age: 26-40<br />party_affiliation: Libertarian<br />count:     448","count:     786<br />age: 41-64<br />party_affiliation: Libertarian<br />count:     786","count:     424<br />age: 65+<br />party_affiliation: Libertarian<br />count:     424"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Libertarian","legendgroup":"Libertarian","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[682005,1742646,2113711,907275],"base":[0.77499999999999991,1.7749999999999999,2.7750000000000004,3.7750000000000004],"x":[341002.5,871323,1056855.5,453637.5],"y":[0.22500000000000009,0.22500000000000009,0.22499999999999964,0.22499999999999964],"text":["count:  682005<br />age: 18-25<br />party_affiliation: Independent<br />count:  682005","count: 1742646<br />age: 26-40<br />party_affiliation: Independent<br />count: 1742646","count: 2113711<br />age: 41-64<br />party_affiliation: Independent<br />count: 2113711","count:  907275<br />age: 65+<br />party_affiliation: Independent<br />count:  907275"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(190,190,190,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Independent","legendgroup":"Independent","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[36103,119534,542148,639742],"base":[1,1.9999999999999998,3,4],"x":[18051.5,59767,271074,319871],"y":[0.22500000000000009,0.22499999999999987,0.22499999999999964,0.22499999999999964],"text":["count:   36103<br />age: 18-25<br />party_affiliation: Republican<br />count:   36103","count:  119534<br />age: 26-40<br />party_affiliation: Republican<br />count:  119534","count:  542148<br />age: 41-64<br />party_affiliation: Republican<br />count:  542148","count:  639742<br />age: 65+<br />party_affiliation: Republican<br />count:  639742"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Republican","legendgroup":"Republican","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[41595,142062,348972,482401],"base":[1.2249999999999999,2.2250000000000001,3.2249999999999996,4.2250000000000005],"x":[20797.5,71031,174486,241200.5],"y":[0.22500000000000009,0.22499999999999964,0.22500000000000053,0.22499999999999964],"text":["count:   41595<br />age: 18-25<br />party_affiliation: Democrat<br />count:   41595","count:  142062<br />age: 26-40<br />party_affiliation: Democrat<br />count:  142062","count:  348972<br />age: 41-64<br />party_affiliation: Democrat<br />count:  348972","count:  482401<br />age: 65+<br />party_affiliation: Democrat<br />count:  482401"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Democrat","legendgroup":"Democrat","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.762557077625573,"r":7.3059360730593621,"b":40.182648401826491,"l":54.794520547945211},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Affiliation by Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-105685.55,2219396.5499999998],"tickmode":"array","ticktext":["0","500,000","1,000,000","1,500,000","2,000,000"],"tickvals":[0,500000.00000000006,1000000,1500000,1999999.9999999998],"categoryorder":"array","categoryarray":["0","500,000","1,000,000","1,500,000","2,000,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Number of Voters","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,4.5999999999999996],"tickmode":"array","ticktext":["18-25","26-40","41-64","65+"],"tickvals":[1,2,3,4],"categoryorder":"array","categoryarray":["18-25","26-40","41-64","65+"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Age Range","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"Party Affiliation","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"240c7060624b":{"x":{},"y":{},"fill":{},"label":{},"type":"bar"}},"cur_data":"240c7060624b","visdat":{"240c7060624b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -360,10 +365,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -373,8 +377,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -387,6 +400,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -430,6 +518,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -455,6 +544,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -515,6 +631,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

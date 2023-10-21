@@ -1,5 +1,6 @@
 ---
 title: "Maps of Voters"
+image: "maps.webp"
 format: html
 editor: visual
 ---

@@ -1,7 +1,7 @@
 {
-  "hash": "aaa4f8114a73b4d104cba0855dc66616",
+  "hash": "3e489b20aa8409061904c8e46f1e6e87",
   "result": {
-    "markdown": "---\ntitle: For Treasurers\nimage: canvassers.webp\nformat:\n  html:\n    page-layout: full\n---\n\nGet the names and addresses of voters who are already sympathetic to your party and may be willing to donate. Enter your party, your county, and desired age range, and the table will automatically fill in the people with the highest match. You can use their name and address to send flyers or ask for donations.\n\n::: {.column-screen}\n<iframe height=\"800\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/GetDonations/\"> </iframe>\n:::\n\n",
+    "markdown": "---\ntitle: For Treasurers\nimage: treasurer.png\nformat:\n  html:\n    page-layout: full\n---\n\nGet the names and addresses of voters who are already sympathetic to your party and may be willing to donate. Enter your party, your county, and desired age range, and the table will automatically fill in the people with the highest match. You can use their name and address to send flyers or ask for donations.\n\n::: {.column-screen}\n<iframe height=\"800\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/GetDonations/\"> </iframe>\n:::\n\n",
     "supporting": [
       "donations_files"
     ],

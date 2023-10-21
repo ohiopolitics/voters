@@ -1,6 +1,6 @@
 ---
 title: "For Canvassers"
-image: "canvass.jpg"
+image: "canvassers.webp"
 jupyter: python3
 format:
   html:
