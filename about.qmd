@@ -4,30 +4,97 @@ title: "About Us"
 
 **We're all** data scientists who enjoy finding stories in unexpected places and opening up information to the public. We've worked at political consulting companies and studied political elections from the ground up, and want to share what we've learned.
 
+<hr>
+
 ::: columns
-::: {.column width="25%"}
-![](Pictures/Sigmund.jpg)
+
+<br>
+<br>
+
+::: {.column width="5%"}
+<!-- space -->
 :::
-::: {.column width="75%"}
-**Sigmund Serranilla** is a .... here etc etc
+
+::: {.column width="20%"}
+<img src="Pictures/Sigmund.jpg" style="width: 10rem; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
 :::
-::: {.column width="75%"}
-**Spencer Driggs** is a data science student at BYU-Idaho. He currently works as a data journalist for *Scroll*, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like [Jon Bois](https://www.youtube.com/watch?v=ZlviajJlctQ&t=293s&pp=ygUKZGF2ZSBzdGVpYg%3D%3D) can.
+
+::: {.column width="5%"}
+<!-- space -->
 :::
-::: {.column width="25%"}
-![](Pictures/Spencer.jpg)
+
+::: {.column width="70%"}
+**Sigmund Serranilla** is a proud Filipino-American who is pursuing a degree in Data Science at BYU-Idaho. He is passionate about using data to help people make better decisions. Sigmund has worked coast to coast from Los Angeles, to Boston as a data science intern. As a data scientist he has worked in the energy sector and in HR and loves using data to help make informed decisions in those industries.
 :::
-::: {.column width="25%"}
-![](Pictures/AJ.jpg)
+
+
+
+<br>
+<br>
+
+::: {.column width="70%"}
+**Spencer Driggs**, a Chicago native, is a data science student at BYU-Idaho. He currently works as a data journalist for *Scroll*, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like [Jon Bois](https://www.youtube.com/watch?v=ZlviajJlctQ&t=293s&pp=ygUKZGF2ZSBzdGVpYg%3D%3D) can.
 :::
-::: {.column width="75%"}
-**AJ Averett** blah blah
+
+::: {.column width="5%"}
+<!-- space -->
 :::
-::: {.column width="75%"}
-**Addison Pratt** blah blah blah
+
+::: {.column width="20%"}
+<img src="Pictures/Spencer.jpg" style="width: 10rem; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
 :::
-::: {.column width="25%"}
-![](Pictures/addison.jpg)
+
+::: {.column width="5%"}
+<!-- space -->
 :::
+
+
+<br>
+<br>
+
+::: {.column width="5%"}
+<!-- space -->
+:::
+
+::: {.column width="20%"}
+<img src="Pictures/AJ.jpg" style="width: 10rem; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
+
+:::
+
+::: {.column width="5%"}
+<!-- space -->
+:::
+
+::: {.column width="70%"}
+**Aj Averett**, a proud resident from Austin, Texas who loves solving mysteries with data. Aj has always been fascinated with the intersection of social science, statistics, and computer science. He worked at a pollster for his internship and has been hooked ever since. He is currently a data science student at BYU-Idaho. When he's not working on data projects, he enjoys playing the piano and reading. In the words of Sir Francis Galton, "Whenever you can, count"
+:::
+
+
+
+<br>
+<br>
+
+::: {.column width="70%"}
+**Addison Pratt**, hailing from Calgary, seeks to uncover truth by analyzing data and leveraging it to solve everyday problems. He previously worked as a political data scientist on Capitol Hill D.C. where developed models to predict voting patterns across the country. His main interests in data science are refining skills in machine learning, biostatistics, and data visualization. In his free time, he loves to cook, speak Spanish and be outdoors.
+
+
+
+
+
+
+:::
+
+::: {.column width="5%"}
+<!-- space -->
+:::
+
+::: {.column width="20%"}
+<img src="Pictures/addison.jpg" style="width: 10rem; border-radius: 50%; display: block; margin-left: auto; margin-right: auto;">
+:::
+
+::: {.column width="5%"}
+<!-- space -->
+:::
+
 :::
 
