@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "**Ohio Voters**",
     "section": "",
-    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nCool political inference\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwoahhh science!\n\n\n\n\n\n\nData Wizards\n\n\nJan 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncrazyyyy inference\n\n\n\n\n\n\nAj Averett\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwoahhh science!\n\n\n\n\n\n\nData Wizards\n\n\nJan 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncrazyyyy inference\n\n\n\n\n\n\nAj Averett\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/power_triangle/power_triangle.html",
@@ -65,9 +65,9 @@
   {
     "objectID": "posts/pca/pca.html",
     "href": "posts/pca/pca.html",
-    "title": "Cool political inference",
+    "title": "Trends between Democrats and Republicans",
     "section": "",
-    "text": "Code\nprint(\"hi!!! owo\")\n\n\nhi!!! owo"
+    "text": "library(tidyverse)\nlibrary(arrow)\nvote &lt;- read_parquet('../../../SWVF_1_full.parquet')\ntotal_pop &lt;- 11756058*.728\nsummary &lt;- vote %&gt;%\n  group_by(party_affiliation) %&gt;%\n  summarise(count=n())\nunregistered &lt;- total_pop - sum(summary$count)\nsummary &lt;- summary %&gt;%\n  add_row(party_affiliation = 'Unregistered', count=unregistered)\nsummary$party_affiliation &lt;- c('Unaffiliated','Democrat','Libertarian','Republican','Unregistered')\n\n\nggplot(summary,aes(y=reorder(party_affiliation,count),\n                   x=count,\n                   fill=party_affiliation,\n                   label=paste(round(count/total_pop,2)*100),'%'))+\n  geom_col() +\n  theme_minimal() +\n  geom_text(nudge_x=90000) +\n  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey')+\n  theme(legend.position='none',\n        panel.grid.minor = element_blank()) +\n  scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +\n  labs(x='Total Voters (in thousands)',y='Party',title='Most People Haven\\'t Registered')\nvote$age = 2023 - year(as_datetime(vote$date_of_birth))\n\nvote &lt;- vote %&gt;% \n  mutate(age_range = case_when(age &lt;= 25 ~ '18-25',\n                               age &lt;= 40 ~ '26-40',\n                               age &lt;= 64 ~ '40-64',\n                               age &gt; 64 ~ '65+'))\n\nage_sum &lt;- vote %&gt;%\n  group_by(age_range,party_affiliation) %&gt;%\n  summarise(count = n())\n\nf= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation)) +\n  geom_col(position='dodge')\n\nf %&gt;% plotly::ggplotly()"
   },
   {
     "objectID": "posts/pca/pca.html#pc1",
@@ -130,6 +130,6 @@
     "href": "Ohio Voters.html",
     "title": "Meet Aj!",
     "section": "",
-    "text": "Welcome to the template for our website\n\n\n\n\n\n\n\n\nMeet Aj!\n\nData Scientist\nI’m a data scientist with a passion for Python, R, data visualization, and statistics/machine learning.\n\n\n\n\n \n\n\nHere’s where we start to put stuff I guess.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA county like mine\n\n\n\n\n\n\nAj Averett\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nState of American Christianity\n\n\n\n\n\n\nAj Averett\n\n\nJan 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Triangle of Power\n\n\n\n\n\n\nAj Averett\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Meet Aj!\n\nData Scientist\nI’m a data scientist with a passion for Python, R, data visualization, and statistics/machine learning.\n\n\n\n\n \n\n\nHere’s where we start to put stuff I guess.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwoahhh science!\n\n\n\n\n\n\nData Wizards\n\n\nJan 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncrazyyyy inference\n\n\n\n\n\n\nAj Averett\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -1,17 +1,56 @@
 ---
-title: "Cool political inference"
+title: "Trends between Democrats and Republicans"
 author: "Data Wizards"
 date: "2023-3-31"
 categories: ['politics','visualization','statistics','python']
 image: "pca.png"
-jupyter: python3
 format:
   html:
     code-fold: true
 ---
+```{r}
+library(tidyverse)
+library(arrow)
+vote <- read_parquet('../../../SWVF_1_full.parquet')
+total_pop <- 11756058*.728
+summary <- vote %>%
+  group_by(party_affiliation) %>%
+  summarise(count=n())
+unregistered <- total_pop - sum(summary$count)
+summary <- summary %>%
+  add_row(party_affiliation = 'Unregistered', count=unregistered)
+summary$party_affiliation <- c('Unaffiliated','Democrat','Libertarian','Republican','Unregistered')
 
 
-```{python}
-print("hi!!! owo")
+ggplot(summary,aes(y=reorder(party_affiliation,count),
+                   x=count,
+                   fill=party_affiliation,
+                   label=paste(round(count/total_pop,2)*100),'%'))+
+  geom_col() +
+  theme_minimal() +
+  geom_text(nudge_x=90000) +
+  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey')+
+  theme(legend.position='none',
+        panel.grid.minor = element_blank()) +
+  scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +
+  labs(x='Total Voters (in thousands)',y='Party',title='Most People Haven\'t Registered')
+```
 
+```{r}
+vote$age = 2023 - year(as_datetime(vote$date_of_birth))
+
+vote <- vote %>% 
+  mutate(age_range = case_when(age <= 25 ~ '18-25',
+                               age <= 40 ~ '26-40',
+                               age <= 64 ~ '40-64',
+                               age > 64 ~ '65+'))
+
+age_sum <- vote %>%
+  group_by(age_range,party_affiliation) %>%
+  summarise(count = n())
+
+f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation)) +
+  geom_col(position='dodge')
+
+f %>% plotly::ggplotly()
 ```
