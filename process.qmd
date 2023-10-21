@@ -1,0 +1,57 @@
+---
+title: ""
+---
+
+```{=html}
+
+<div style="font-family: Arial, sans-serif; background-color: #f0e6ff; padding: 5%; text-align: center; transition: all 0.3s ease;">
+
+    <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Data</h1>
+    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of our dataset.</p>
+
+    <div style="background-color: white; border-radius: 15px; padding: 5%; box-shadow: 0 8px 15px rgba(90, 42, 109, 0.1); transition: all 0.3s ease;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;">1. Raw Data Collection</h3>
+            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file- this data, dependiing on state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;">2. Geo-encoding</h3>
+            <p style="color: #11091c;">Using the registered address information, we enrich the data by assigning geographical coordinates, allowing for geospatial analysis. This is done through a process called geo-encoding with the United States census API</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;">3. Join with Geospatial Datasets</h3>
+            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust information about each voter</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;">4. Data Cleanup</h3>
+            <p style="color: #11091c;">We refine the dataset by eliminating anomalies, ensuring accuracy and relevance. </p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;">5. Machine Learning</h3>
+            <p style="color: #11091c;">Implementing AI and machine learning algorithms, we extract patterns from the dataset.</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div>
+            <h3 style="color: #11091c;">6. Discovery of Trends & Analyses</h3>
+            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses.</p>
+        </div>
+
+    </div>
+
+</div>
+```
