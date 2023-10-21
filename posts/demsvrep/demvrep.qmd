@@ -1,0 +1,85 @@
+---
+title: "Trends between Democrats and Republicans"
+author: "Data Wizards"
+date: "2023-3-31"
+categories: ['politics','visualization','statistics','python']
+image: "pca.png"
+format:
+  html:
+    code-fold: true
+---
+
+When we talk about Republicans and Democrats, it's important to remember just how many more people are unaffiliated, and how many more don't even register. Yes, there are more Republicans than Democrats, but a well-organized campaign in specific areas can reach a lot of people and have a big sway on the total votes.
+
+```{r}
+#| warning: false
+
+library(tidyverse)
+df = read_csv("summary.csv") %>% 
+  mutate(party_affiliation = case_when(party_affiliation == "R" ~ "Republican",
+                                       party_affiliation == "D" ~ "Democrat",
+                                       party_affiliation == "L" ~ "Libertarian",
+                                       TRUE ~ "Independent"))
+```
+
+
+```{r}
+voting_age_adults <- round(11756058*.728)
+
+summary <- df %>%
+  group_by(party_affiliation) %>%
+  summarise(count = sum(sos_voter_id)) 
+
+n_registered_voters = summary$count %>% sum
+
+unregistered_voters = voting_age_adults - n_registered_voters
+
+
+f = summary %>% 
+  add_row(party_affiliation="Unregistered", count=unregistered_voters) %>% 
+  ggplot(aes(x = count,
+             y = reorder(party_affiliation,count),
+             fill = party_affiliation)) +
+  geom_col() +
+  theme_minimal() +
+  scale_fill_manual(values=c('Republican'='red',
+                             'Democrat'='blue',
+                             'Libertarian'='yellow',
+                             'Independent'='purple',
+                             'Unregistered'='darkgrey'),
+                    na.value = 'grey')+
+  theme(legend.position='none',
+        panel.grid.minor = element_blank()) +
+  labs(x='Total Voters (in thousands)',y='Party') +
+  scale_x_continuous(labels = scales::comma)
+  
+
+f %>% plotly::ggplotly()
+
+```
+
+Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.
+
+```{r}
+age_sum <- df %>%
+  group_by(age,party_affiliation) %>%
+  summarise(count = sum(sos_voter_id))
+
+party_order <- c("Libertarian", "Independent", "Republican", "Democrat")
+
+
+# Set the Party variable as a factor with the desired order
+age_sum$party_affiliation <- factor(age_sum$party_affiliation, levels = party_order)
+
+f= ggplot(age_sum, aes(y=age,x=count,fill=party_affiliation,label=count)) +
+  geom_col(position='dodge') +
+  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey') +
+  theme_minimal() +
+  labs(x='Number of Voters',y='Age Range',title='Affiliation by Age Range',
+       fill='Party Affiliation') +
+  scale_x_continuous(labels = scales::comma)
+
+
+f %>% plotly::ggplotly()
+```
+
