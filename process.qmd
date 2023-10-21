@@ -34,21 +34,21 @@ title: ""
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">4. Data Cleanup</h3>
-            <p style="color: #11091c;">We refine the dataset by eliminating anomalies, ensuring accuracy and relevance. </p>
+            <p style="color: #11091c;">We refine the dataset by eliminating anomalies, ensuring accuracy and relevance. This is done by making sure all variables are appropriate for machine learning models</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">5. Machine Learning</h3>
-            <p style="color: #11091c;">Implementing AI and machine learning algorithms, we extract patterns from the dataset.</p>
+            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout liklihood, Republican liklihood, and Democrat liklihood. These three variables are scored from 0 to 1.</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div>
             <h3 style="color: #11091c;">6. Discovery of Trends & Analyses</h3>
-            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses.</p>
+            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses. </p>
         </div>
 
     </div>
