@@ -6,7 +6,7 @@ title: ""
 
 <div style="font-family: Arial, sans-serif; background-color: #f0e6ff; padding: 5%; text-align: center; transition: all 0.3s ease;">
 
-    <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Data</h1>
+    <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Our Data</h1>
     <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of our dataset.</p>
 
     <div style="background-color: white; border-radius: 15px; padding: 5%; box-shadow: 0 8px 15px rgba(90, 42, 109, 0.1); transition: all 0.3s ease;">
