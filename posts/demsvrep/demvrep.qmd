@@ -1,8 +1,6 @@
 ---
 title: "Trends between Democrats and Republicans"
 author: "Data Wizards"
-date: "2023-3-31"
-categories: ['politics','visualization','statistics','python']
 image: "pca.png"
 format:
   html:

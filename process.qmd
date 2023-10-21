@@ -7,27 +7,27 @@ title: ""
 <div style="font-family: Arial, sans-serif; background-color: #f0e6ff; padding: 5%; text-align: center; transition: all 0.3s ease;">
 
     <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Our Data</h1>
-    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of our dataset.</p>
+    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of how we offer real data-driven solutions for any campaign.</p>
 
     <div style="background-color: white; border-radius: 15px; padding: 5%; box-shadow: 0 8px 15px rgba(90, 42, 109, 0.1); transition: all 0.3s ease;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">1. Raw Data Collection</h3>
-            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file- this data, dependiing on state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
+            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file. This data, depending on the state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">2. Geo-encoding</h3>
-            <p style="color: #11091c;">Using the registered address information, we enrich the data by assigning geographical coordinates, allowing for geospatial analysis. This is done through a process called geo-encoding with the United States census API</p>
+            <p style="color: #11091c;">Utilizing the provided address details, we take the data to the next level by integrating geographical coordinates, which unlocks the potential for sophisticated geospatial analysis. By leveraging a state-of-the-art method known as geo-encoding, in conjunction with the reliable United States census API, we ensure precise and actionable insights for our users.</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">3. Join with Geospatial Datasets</h3>
-            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust information about each voter</p>
+            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context about the surrounding region of each voter. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust insights about each voter</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
@@ -41,14 +41,14 @@ title: ""
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;">5. Machine Learning</h3>
-            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout liklihood, Republican liklihood, and Democrat liklihood. These three variables are scored from 0 to 1.</p>
+            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout likelihood, Republican likelihood, and Democrat likelihood. These three variables are scored from 0 to 1.</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div>
             <h3 style="color: #11091c;">6. Discovery of Trends & Analyses</h3>
-            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses. </p>
+            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses that allow us to predict trends in voting behavior and election outcomes. Our data and methods are open source for anyone. </p>
         </div>
 
     </div>

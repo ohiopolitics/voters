@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,6 +46,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title"><strong>Ohio Voters</strong></span>
     </a>
@@ -82,21 +87,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./process.html" rel="" target="" aria-current="page">
- <span class="menu-text">Our Process</span></a>
+    <a class="nav-link active" href="./process.html" aria-current="page"> 
+<span class="menu-text">Our Process</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -114,27 +119,27 @@ ul.task-list li input[type="checkbox"] {
 <div style="font-family: Arial, sans-serif; background-color: #f0e6ff; padding: 5%; text-align: center; transition: all 0.3s ease;">
 
     <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Our Data</h1>
-    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of our dataset.</p>
+    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of how we offer real data-driven solutions for any campaign.</p>
 
     <div style="background-color: white; border-radius: 15px; padding: 5%; box-shadow: 0 8px 15px rgba(90, 42, 109, 0.1); transition: all 0.3s ease;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;" class="anchored">1. Raw Data Collection</h3>
-            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file- this data, dependiing on state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
+            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file. This data, depending on the state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;" class="anchored">2. Geo-encoding</h3>
-            <p style="color: #11091c;">Using the registered address information, we enrich the data by assigning geographical coordinates, allowing for geospatial analysis. This is done through a process called geo-encoding with the United States census API</p>
+            <p style="color: #11091c;">Utilizing the provided address details, we take the data to the next level by integrating geographical coordinates, which unlocks the potential for sophisticated geospatial analysis. By leveraging a state-of-the-art method known as geo-encoding, in conjunction with the reliable United States census API, we ensure precise and actionable insights for our users.</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;" class="anchored">3. Join with Geospatial Datasets</h3>
-            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust information about each voter</p>
+            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context about the surrounding region of each voter. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust insights about each voter</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
@@ -148,14 +153,14 @@ ul.task-list li input[type="checkbox"] {
 
         <div style="margin-bottom: 5%;">
             <h3 style="color: #11091c;" class="anchored">5. Machine Learning</h3>
-            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout liklihood, Republican liklihood, and Democrat liklihood. These three variables are scored from 0 to 1.</p>
+            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout likelihood, Republican likelihood, and Democrat likelihood. These three variables are scored from 0 to 1.</p>
         </div>
 
         <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
 
         <div>
             <h3 style="color: #11091c;" class="anchored">6. Discovery of Trends &amp; Analyses</h3>
-            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses. </p>
+            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses that allow us to predict trends in voting behavior and election outcomes. Our data and methods are open source for anyone. </p>
         </div>
 
     </div>
@@ -244,10 +249,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -257,8 +261,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -271,6 +284,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -314,6 +402,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -339,6 +428,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -399,6 +515,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

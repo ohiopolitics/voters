@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,6 +46,11 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -70,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title"><strong>Ohio Voters</strong></span>
     </a>
@@ -82,21 +87,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
- <span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./process.html" rel="" target="">
- <span class="menu-text">Our Process</span></a>
+    <a class="nav-link" href="./process.html"> 
+<span class="menu-text">Our Process</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -122,6 +127,7 @@ ul.task-list li input[type="checkbox"] {
     
   </div>
   
+
 
 </header>
 
@@ -175,22 +181,22 @@ ul.task-list li input[type="checkbox"] {
 <script>
 const profilesData = [
     {
-        image: "images/sigmund.jpg",
+        image: "https://media.licdn.com/dms/image/D5603AQGDQBoHded1Fg/profile-displayphoto-shrink_800_800/0/1694578256312?e=1703116800&v=beta&t=xMj8NTOoQx2FzHukjW9rrNaHdbIbQm9abcnUqMLZF30",
         name: "Sigmund Serranilla",
         description: " is a proud Filipino-American who is pursuing a degree in Data Science at BYU-Idaho. He is passionate about using data to help people make better decisions. Sigmund has worked coast to coast from Los Angeles, to Boston as a data science intern. As a data scientist he has worked in the energy sector and in HR and loves using data to help make informed decisions in those industries."
     },
     {
-        image: "images/spencer.jpg",
+        image: "https://media.licdn.com/dms/image/D5603AQE-PrBNofsi1A/profile-displayphoto-shrink_800_800/0/1674503029867?e=1703116800&v=beta&t=mC0-T-wdZ4vM56hEGBsUEDDjjQWtvAgHaVAamuPyNkQ",
         name: "Spencer Driggs",
         description: ", a Chicago native, is a data science student at BYU-Idaho. He currently works as a data journalist for Scroll, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like Jon Bois can."
     },
     {
-        image: "images/aj.jpg",
+        image: "https://media.licdn.com/dms/image/C4E03AQFPpQNWRYt8oA/profile-displayphoto-shrink_400_400/0/1613120696390?e=1703116800&v=beta&t=5LBxbd3LqcC91MahoLtBL2gBC8MZJ1gCFmhSyVbYqe8",
         name: "Aj Averett",
         description: ", a proud resident from Austin, Texas who loves solving mysteries with data. Aj has always been fascinated with the intersection of social science, statistics, and computer science. He worked at a pollster for his internship and has been hooked ever since. He is currently a data science student at BYU-Idaho. When he's not working on data projects, he enjoys playing the piano and reading. In the words of Sir Francis Galton, 'Whenever you can, count'."
     },
     {
-        image: "images/addison.jpg",
+        image: "https://media.licdn.com/dms/image/D4D03AQEEmXFHmNee-A/profile-displayphoto-shrink_800_800/0/1686665896420?e=1703116800&v=beta&t=RIZ-_cjMlu4s-_SRC-6Opd6TLp0ux93d5f0tkz40vWg",
         name: "Addison Pratt",
         description: ", hailing from Calgary, seeks to uncover truth by analyzing data and leveraging it to solve everyday problems. He previously worked as a political data scientist on Capitol Hill D.C. where developed models to predict voting patterns across the country. His main interests in data science are refining skills in machine learning, biostatistics, and data visualization. In his free time, he loves to cook, speak Spanish and be outdoors."
     }
@@ -304,10 +310,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -317,8 +322,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -331,6 +345,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -374,6 +463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -399,6 +489,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -459,6 +576,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

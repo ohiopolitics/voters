@@ -53,22 +53,22 @@ title: "About Us"
 <script>
 const profilesData = [
     {
-        image: "images/sigmund.jpg",
+        image: "https://media.licdn.com/dms/image/D5603AQGDQBoHded1Fg/profile-displayphoto-shrink_800_800/0/1694578256312?e=1703116800&v=beta&t=xMj8NTOoQx2FzHukjW9rrNaHdbIbQm9abcnUqMLZF30",
         name: "Sigmund Serranilla",
         description: " is a proud Filipino-American who is pursuing a degree in Data Science at BYU-Idaho. He is passionate about using data to help people make better decisions. Sigmund has worked coast to coast from Los Angeles, to Boston as a data science intern. As a data scientist he has worked in the energy sector and in HR and loves using data to help make informed decisions in those industries."
     },
     {
-        image: "images/spencer.jpg",
+        image: "https://media.licdn.com/dms/image/D5603AQE-PrBNofsi1A/profile-displayphoto-shrink_800_800/0/1674503029867?e=1703116800&v=beta&t=mC0-T-wdZ4vM56hEGBsUEDDjjQWtvAgHaVAamuPyNkQ",
         name: "Spencer Driggs",
         description: ", a Chicago native, is a data science student at BYU-Idaho. He currently works as a data journalist for Scroll, BYU-I's newspaper, and as a data scientist for the Wilford Woodruff Papers Project. When he's not making charts or building stories, he enjoys playing clarinet and reading strange books. He hopes someday he'll write data pieces like Jon Bois can."
     },
     {
-        image: "images/aj.jpg",
+        image: "https://media.licdn.com/dms/image/C4E03AQFPpQNWRYt8oA/profile-displayphoto-shrink_400_400/0/1613120696390?e=1703116800&v=beta&t=5LBxbd3LqcC91MahoLtBL2gBC8MZJ1gCFmhSyVbYqe8",
         name: "Aj Averett",
         description: ", a proud resident from Austin, Texas who loves solving mysteries with data. Aj has always been fascinated with the intersection of social science, statistics, and computer science. He worked at a pollster for his internship and has been hooked ever since. He is currently a data science student at BYU-Idaho. When he's not working on data projects, he enjoys playing the piano and reading. In the words of Sir Francis Galton, 'Whenever you can, count'."
     },
     {
-        image: "images/addison.jpg",
+        image: "https://media.licdn.com/dms/image/D4D03AQEEmXFHmNee-A/profile-displayphoto-shrink_800_800/0/1686665896420?e=1703116800&v=beta&t=RIZ-_cjMlu4s-_SRC-6Opd6TLp0ux93d5f0tkz40vWg",
         name: "Addison Pratt",
         description: ", hailing from Calgary, seeks to uncover truth by analyzing data and leveraging it to solve everyday problems. He previously worked as a political data scientist on Capitol Hill D.C. where developed models to predict voting patterns across the country. His main interests in data science are refining skills in machine learning, biostatistics, and data visualization. In his free time, he loves to cook, speak Spanish and be outdoors."
     }
