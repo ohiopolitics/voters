@@ -7,6 +7,6 @@ format:
     page-layout: full
 ---
 
-Get the names and addresses of voters who are already sympathetic to your party and may be willing to donate.
+Get the names and addresses of voters who are already sympathetic to your party and may be willing to donate. Enter your party, your county, and desired age range, and the table will automatically fill in the people with the highest match. You can use their name and address to send flyers or ask for donations.
 
 <iframe height="800" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/GetDonations/"> </iframe>

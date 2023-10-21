@@ -9,7 +9,7 @@ format:
 css: [custom.css]
 ---
 
-See people who we think are likely to register to vote this election, then help them register!
+See people who we think are likely to register to vote this election, then help them register! Enter in the county and age range you're looking to visit, and it'll automatically populate with the people who are most likely to move from "unaffiliated" to your party.
 
 
 <iframe height="1000" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/"> </iframe>
