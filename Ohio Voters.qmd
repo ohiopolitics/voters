@@ -1,18 +1,4 @@
 ---
-title: "Ohio Voters"
-author: "Data Wizards"
-date: "20 October, 2023"
-execute:
-  keep-md: false
-  warning: false
-format:
-  html:
-    code-fold: true
-    code-line-numbers: true
----
-### Welcome to the template for our website
-
----
 title: ""
 page-layout: full
 resources: resume.pdf

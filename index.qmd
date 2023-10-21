@@ -18,37 +18,9 @@ listing:
 
 <!-- HERO SECTION -->
 ::: {.column-screen}
-![](images/bg_hero.png){style="transform: translateY(-5em); height: 10% !important;"}
+![](images/bg_hero.png){style="transform: translateY(-3em); height: 10% !important;"}
 :::
 
-
-<!-- ME SECTION -->
-:::: columns
-
-<!-- COL1 -->
-::: {.column width="70%"}
-
-# Data Wizards!
-
-### Data Scientist
-
-I'm a data scientist with a passion for Python, R, data visualization, and statistics/machine learning. 
-
-:::
-
-<!-- COL 2 (SPACE) -->
-::: {.column width="10%"}
-
-:::
-
-<!-- COL 3 -->
-::: {.column width="20%"}
-
-<br> ![](images/portrait.png){width="130%"}
-
-:::
-
-::::
 
 Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We've organized the Ohio voting history to help people find potential voters.
 
