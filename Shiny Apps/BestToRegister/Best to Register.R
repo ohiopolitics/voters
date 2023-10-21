@@ -48,8 +48,7 @@ server <- function(input, output)
       
       if (input$age_category != "All") {
         age_ranges <- list(
-          "Under 18" = c(0, 18),
-          "18-35" = c(19, 35),
+          "18-35" = c(18, 35),
           "36-60" = c(36, 60),
           "Over 60" = c(61, max(filtered$Age))
         )
@@ -61,12 +60,12 @@ server <- function(input, output)
         filter(County %in% input$county) %>%
         arrange(desc(likely_score)) %>%
         select(last_name,first_name,street_address,Age,County,likely_score) %>% #Add back other column
-        head(n=ifelse(input$num_results>length(filtered$county),input$num_results,length(filtered)))
+        head(n=ifelse(input$num_results<length(filtered$county),input$num_results,length(filtered)))
     })
     
     # Render the table of filtered results
     output$filtered_results <- renderDT({
-      filtered_data()}
+      filtered_data()},options=list(dom = 't')
     )
     
     # Define a download handler for the CSV file

@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +61,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title"><strong>Ohio Voters</strong></span>
     </a>
   </div>
@@ -82,15 +82,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../process.html" rel="" target="">
+    <a class="nav-link active" href="./process.html" rel="" target="" aria-current="page">
  <span class="menu-text">Our Process</span></a>
   </li>  
 </ul>
@@ -106,13 +106,61 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 
-<p>See people who we think are likely to register to vote this election, then help them register!</p>
-<iframe height="1000" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/">
-</iframe>
+
+<div style="font-family: Arial, sans-serif; background-color: #f0e6ff; padding: 5%; text-align: center; transition: all 0.3s ease;">
+
+    <h1 style="color: #11091c; margin-bottom: 1.5rem;">The Journey of Data</h1>
+    <p style="font-size: 1.2em; margin-bottom: 5%; color: #11091c;">From raw data to revealing discoveries, follow the transformative path of our dataset.</p>
+
+    <div style="background-color: white; border-radius: 15px; padding: 5%; box-shadow: 0 8px 15px rgba(90, 42, 109, 0.1); transition: all 0.3s ease;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;" class="anchored">1. Raw Data Collection</h3>
+            <p style="color: #11091c;">The secretary of state department of each state releases the raw voter file- this data, dependiing on state, is updated roughly every month. Each row represents a voter like you, paving the foundation of our journey. </p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;" class="anchored">2. Geo-encoding</h3>
+            <p style="color: #11091c;">Using the registered address information, we enrich the data by assigning geographical coordinates, allowing for geospatial analysis. This is done through a process called geo-encoding with the United States census API</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;" class="anchored">3. Join with Geospatial Datasets</h3>
+            <p style="color: #11091c;">By joining our data with public geospatial datasets, we gain a deeper spatial context. Different datasets, including urban density, census information, and other geodatabase information allows us to find robust information about each voter</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;" class="anchored">4. Data Cleanup</h3>
+            <p style="color: #11091c;">We refine the dataset by eliminating anomalies, ensuring accuracy and relevance. This is done by making sure all variables are appropriate for machine learning models</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div style="margin-bottom: 5%;">
+            <h3 style="color: #11091c;" class="anchored">5. Machine Learning</h3>
+            <p style="color: #11091c;">We implement AI and machine learning algorithms in order to extract patterns from the dataset. Specifically, we predict three metrics that determine elections: Voter turnout liklihood, Republican liklihood, and Democrat liklihood. These three variables are scored from 0 to 1.</p>
+        </div>
+
+        <hr style="border: none; height: 2px; background-color: #d6bbec; margin: 5% 0;">
+
+        <div>
+            <h3 style="color: #11091c;" class="anchored">6. Discovery of Trends &amp; Analyses</h3>
+            <p style="color: #11091c;">With our refined data, we are equipped to uncover meaningful trends and analyses. </p>
+        </div>
+
+    </div>
+
+</div>
 
 
 

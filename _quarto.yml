@@ -11,6 +11,8 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: process.qmd
+        text: Our Process
       
 
 format:

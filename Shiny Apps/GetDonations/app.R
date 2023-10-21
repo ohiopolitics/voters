@@ -25,7 +25,7 @@ ui <- fluidPage(
       selectInput("county", "Select County:", 
                   choices = unique(counties$County),
                   selected = "Adams"),
-      selectInput("age_category", "Select Age Category:", choices = c("All", "Under 18", "18-35", "36-50", "Over 50")),
+      selectInput("age_category", "Select Age Category:", choices = c("All", "18-35", "36-60", "Over 60")),
       numericInput("num_results", "Number of Results:", value = 10, min = 1),
       downloadButton("download_csv", "Download Filtered Results")
     ),
@@ -48,8 +48,7 @@ server <- function(input, output)
     
     if (input$age_category != "All") {
       age_ranges <- list(
-        "Under 18" = c(0, 18),
-        "18-35" = c(19, 35),
+        "18-35" = c(18, 35),
         "36-60" = c(36, 60),
         "Over 60" = c(61, max(filtered$Age))
       )
@@ -64,21 +63,21 @@ server <- function(input, output)
     if(input$demrep == 'Republican') {
       filtered <- filtered %>%
         arrange(desc(R_probs-D_probs)) %>%
-        select(-c(D_probs,VT_prediction)) %>%
-        head(n=ifelse(input$num_results>length(filtered),input$num_results,length(filtered)))
+        select(-c(D_probs,VT_prediction))
+        
     }
     if(input$demrep == 'Democrat') {
       filtered <- filtered %>%
         arrange(desc(D_probs-R_probs)) %>%
-        select(-c(R_probs,VT_prediction))
-        head(n=ifelse(input$num_results>length(filtered),input$num_results,length(filtered)))
+        select(-c(R_probs,VT_prediction)) #%>%
+        #head(n=ifelse(input$num_results>=length(filtered$County),input$num_results,length(filtered$County)))
     }
+    filtered <- head(filtered, n=ifelse(input$num_results<length(filtered$County),input$num_results,length(filtered$County)))
   })
   
   # Render the table of filtered results
   output$filtered_results <- renderDT({
-    filtered_data()
-  })
+    filtered_data()},options=list(dom = 't'))
   
   # Define a download handler for the CSV file
   output$download_csv <- downloadHandler(

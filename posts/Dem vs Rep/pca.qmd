@@ -12,6 +12,8 @@ format:
 When we talk about Republicans and Democrats, it's important to remember just how many more people are unaffiliated, and how many more don't even register. Yes, there are more Republicans than Democrats, but a well-organized campaign in specific areas can reach a lot of people and have a big sway on the total votes.
 
 ```{r}
+#| warning: false
+
 library(tidyverse)
 library(arrow)
 vote <- read_parquet('../../../SWVF_1_full.parquet') %>%
