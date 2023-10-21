@@ -1,7 +1,7 @@
 {
-  "hash": "f1e90689d58f7e5f166021d1ff186947",
+  "hash": "b77093fb5c2afd7feaf3ff1ae683ef6a",
   "result": {
-    "markdown": "---\ntitle: crazyyyy inference\nauthor: Aj Averett\ndate: 2023-1-3\ncategories:\n  - notation\n  - latex\nimage: penrose.png\n---\n\n$$\ny = mx+b!!!\n$$\n\n",
+    "markdown": "---\ntitle: For Canvassers\nimage: canvass.jpg\n---\n\nFind voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you'd like to visit, and this will automatically pick the people in that area that we predict are most likely to respond favorably to your message.\n\n<iframe height=\"700\" width=\"100%\" frameborder=\"no\" src=\"https://dr-iggs.shinyapps.io/VotersOnTheFence/\"> </iframe>\n\n",
     "supporting": [
       "power_triangle_files"
     ],

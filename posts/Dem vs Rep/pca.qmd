@@ -1,0 +1,98 @@
+---
+title: "Trends between Democrats and Republicans"
+author: "Data Wizards"
+date: "2023-3-31"
+categories: ['politics','visualization','statistics','python']
+image: "pca.png"
+format:
+  html:
+    code-fold: true
+---
+
+When we talk about Republicans and Democrats, it's important to remember just how many more people are unaffiliated, and how many more don't even register. Yes, there are more Republicans than Democrats, but a well-organized campaign in specific areas can reach a lot of people and have a big sway on the total votes.
+
+```{r}
+library(tidyverse)
+library(arrow)
+vote <- read_parquet('../../../SWVF_1_full.parquet') %>%
+  mutate(age = 2023 - year(as_datetime(date_of_birth)),
+         age_range = case_when(age <= 25 ~ '18-25',
+                               age <= 40 ~ '26-40',
+                               age <= 64 ~ '40-64',
+                               age > 64 ~ '65+'))
+vote[vote==''] <- ' '
+total_pop <- 11756058*.728
+summary <- vote %>%
+  group_by(party_affiliation) %>%
+  summarise(count=n())
+unregistered <- total_pop - sum(summary$count)
+summary <- summary %>%
+  add_row(party_affiliation = 'Unregistered', count=unregistered)
+
+ggplot(summary,aes(y=reorder(party_affiliation,count),
+                   x=count,
+                   fill=party_affiliation,
+                   label=paste(round(count/total_pop,2)*100),'%'))+
+  geom_col() +
+  theme_minimal() +
+  geom_text(nudge_x=90000) +
+  scale_fill_manual(values=c('R'='red','D'='blue','L'='yellow',' '='purple'),na.value = 'grey')+
+  theme(legend.position='none',
+        panel.grid.minor = element_blank()) +
+  scale_x_continuous(breaks=c(500000,1000000,5000000),labels=c('500','1,000','5,000')) +
+  labs(x='Total Voters (in thousands)',y='Party',title='Most People Haven\'t Registered')
+```
+
+Most national trends apply to Ohio too. People turn more conservative as they get older, younger people are less likely to register to vote, etc.
+
+```{r}
+age_sum <- vote %>%
+  group_by(age_range,party_affiliation) %>%
+  summarise(count = n())
+age_sum$party_affiliation <- replace(age_sum$party_affiliation,values=c(' '='Unaffiliated','D'='Democrat','L'='Libertarian','R'='Republican'))
+party_order <- c("Unaffiliated", "Republican", "Democrat", "Libertarian")
+
+# Set the Party variable as a factor with the desired order
+age_sum$party_affiliation <- factor(age_sum$party_affiliation, levels = party_order)
+f= ggplot(age_sum, aes(x=age_range,y=count,fill=party_affiliation,label=count)) +
+  geom_col(position='dodge') +
+  scale_fill_manual(values=c('Republican'='red','Democrat'='blue','Libertarian'='yellow','Unaffiliated'='purple'),na.value = 'grey') +
+  theme_minimal() +
+  scale_y_continuous(breaks=c(100000,250000,500000),
+                     labels=c('100,000','250,000','500,000')) +
+  labs(y='Number of Voters',x='Age Range',title='Affiliation by Age Range',
+       fill='Party Affiliation')
+f %>% plotly::ggplotly()
+```
+
+If you want to see the full official registration, use the county breakdown below.
+
+```{r,message=FALSE}
+library(DT)
+codes <- read_csv('../../County Codes.csv')
+county  <- vote %>% 
+  filter(age < 100) %>%
+  group_by(party_affiliation,county_number) %>%
+  summarise(count=n()) %>%
+  mutate(county = codes$County[county_number]) %>%
+  select(county,party_affiliation,count) %>%
+  pivot_wider(names_from=party_affiliation,values_from=count)
+#colnames(county) <- c('County','Democrats','Republicans','Libertarian','Unaffiliated')
+datatable(county)
+```
+
+Counties like Athens usually have a large university, while Delaware County have more middle-aged populations. 
+
+```{r}
+#| column: screen-inset-shaded
+countyage <- vote %>%
+  mutate(county = codes$County[county_number],
+         county = str_replace(county,'County','')) %>%
+  filter(age < 100)
+ggplot(countyage,aes(x=age)) +
+  geom_density()+
+  facet_wrap(vars(countyage$county),ncol = 8)+
+  theme_minimal() +
+  labs(title='Demographic Breakdown by County',x='Age',
+       y='Density of Age')
+```

@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "**Ohio Voters**",
     "section": "",
-    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nGet Donations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind Voters on the Fence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPotential New Voters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Grassroots campaigns always start with a voter list. Obtaining these lists is often difficult. We’ve organized the Ohio voting history to help people find potential voters.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Treasurers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Canvassers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor Registrars\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/power_triangle/power_triangle.html",
     "href": "posts/power_triangle/power_triangle.html",
-    "title": "crazyyyy inference",
+    "title": "For Canvassers",
     "section": "",
-    "text": "\\[\ny = mx+b!!!\n\\]"
+    "text": "Find voters who have a split chance of voting for your party. Choose your current party affiliation and how many people you’d like to visit, and this will automatically pick the people in that area that we predict are most likely to respond favorably to your message."
   },
   {
     "objectID": "posts/power_triangle/power_triangle.html#a-remains-constant",
@@ -114,9 +114,9 @@
   {
     "objectID": "posts/usa_christian/index.html",
     "href": "posts/usa_christian/index.html",
-    "title": "woahhh science!",
+    "title": "For Registrars",
     "section": "",
-    "text": "Code\nprint(\":3 uwu\")\n\n\n[1] \":3 uwu\""
+    "text": "See people who we think are likely to register to vote this election, then help them register!"
   },
   {
     "objectID": "posts/usa_christian/index.html#strength-of-christians",
@@ -131,5 +131,19 @@
     "title": "Meet Aj!",
     "section": "",
     "text": "Meet Aj!\n\nData Scientist\nI’m a data scientist with a passion for Python, R, data visualization, and statistics/machine learning.\n\n\n\n\n \n\n\nHere’s where we start to put stuff I guess.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrends between Democrats and Republicans\n\n\n\n\n\n\nData Wizards\n\n\nMar 31, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nwoahhh science!\n\n\n\n\n\n\nData Wizards\n\n\nJan 14, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncrazyyyy inference\n\n\n\n\n\n\nAj Averett\n\n\nJan 3, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/Find Donations/donations.html",
+    "href": "posts/Find Donations/donations.html",
+    "title": "For Treasurers",
+    "section": "",
+    "text": "Get the names and addresses of voters who are already sympathetic to your party and may be willing to donate."
+  },
+  {
+    "objectID": "posts/registrars/index.html",
+    "href": "posts/registrars/index.html",
+    "title": "For Registrars",
+    "section": "",
+    "text": "See people who we think are likely to register to vote this election, then help them register!"
   }
 ]
