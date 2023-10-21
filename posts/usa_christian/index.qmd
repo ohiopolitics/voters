@@ -1,7 +1,5 @@
 ---
-title: "woahhh science!"
-author: "Data Wizards"
-date: "2023-1-14"
+title: "Potential New Voters"
 categories: [religion, r, visualization]
 image: "chreaster.png"
 format:
@@ -10,6 +8,6 @@ format:
     code-summary: "Show the code"
 ---
 
-```{r}
-print(":3 uwu")
-```
+See people who we think are likely to register to vote this election, then help them register!
+
+<iframe height="700" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/"> </iframe>

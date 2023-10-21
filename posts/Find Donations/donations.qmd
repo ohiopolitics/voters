@@ -1,0 +1,10 @@
+---
+title: "Get Donations"
+categories: [notation, latex]
+image: "aj.jpg"
+jupyter: python3
+---
+
+Get the names and addresses of voters who are already sympathetic to your party and may be willing to donate.
+
+<iframe height="700" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/GetDonations/"> </iframe>
