@@ -15,7 +15,6 @@ results <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/
   mutate(likely_score = 1-abs(.5-VT_prediction))
 counties <- read_csv('https://raw.githubusercontent.com/ohiopolitics/voters/main/Spencer%20Misc/County%20Codes.csv') %>%
   mutate(County=str_replace(County,' County',''))
-counties <- counties[1:40,]
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -73,7 +72,7 @@ server <- function(input, output)
     # Define a download handler for the CSV file
     output$download_csv <- downloadHandler(
       filename = function() {
-        paste("filtered_results_", Sys.Date(), ".csv", sep = "")
+        paste("potential_voters_", Sys.Date(), ".csv", sep = "")
       },
       content = function(file) {
         write.csv(filtered_data() %>%

@@ -9,4 +9,4 @@ format:
 
 See people who we think are likely to register to vote this election, then help them register!
 
-<iframe height="700" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/"> </iframe>
+<iframe height="1000" width="100%" frameborder="no" src="https://dr-iggs.shinyapps.io/BestToRegister/"> </iframe>
